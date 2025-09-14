@@ -1,6 +1,6 @@
 export const Inicio  =()=>{
 
     return(
-        <main>asdasd</main>
+        <main className="">asdasd</main>
     )
 }

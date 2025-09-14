@@ -7,7 +7,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { MenuIcon } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -18,10 +17,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarTrigger,
-  useSidebar,
 } from "./ui/sidebar";
 
-import { Calendar, Home, LetterTextIcon, Search, Settings } from "lucide-react";
 
 const Sublinks = [
   {
@@ -37,26 +34,23 @@ const Sublinks = [
     link: "/contacto",
   },
 ];
-const items = [
+const MenuMobile = [
   {
-    title: "Inicio",
-    url: "/",
+    titulo: "Inicio",
+    link: "/",
   },
   {
-    title: "Sobre nosotros",
-    url: "/#SobreNosotros",
+    titulo: "Sobre nosotros",
+    link: "/#SobreNosotros",
   },
   {
-    title: "Institucional",
+    titulo: "Institucional",
   },
   {
-    title: "Search",
-    url: "#",
+    titulo: "Contacto",
+    link: "#",
   },
-  {
-    title: "Settings",
-    url: "#",
-  },
+  
 ];
 export const Navbar = () => {
   return (
@@ -84,13 +78,16 @@ export const Navbar = () => {
               </div>
             </div>
           </span>
+          {/*  */}
+          {/*  */}
+          {/* MENU DESKTOP */}
+          {/*  */}
+          {/*  */}
           <NavigationMenu viewport={false} className="max-sm:hidden ">
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  className={`${navigationMenuTriggerStyle()}`}
-                  asChild
-                >
+                  className={`${navigationMenuTriggerStyle()}`} asChild>
                   <a href="/">Inicio</a>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -100,7 +97,7 @@ export const Navbar = () => {
                   className={`${navigationMenuTriggerStyle()}`}
                   asChild
                 >
-                  <a href="/SobreNosotros">Sobre nosotros</a>
+                  <a href="/#SobreNosotros">Sobre nosotros</a>
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
@@ -128,7 +125,7 @@ export const Navbar = () => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <SidebarTrigger className=" sm:hidden !w-fit" />
+          <SidebarTrigger className=" sm:hidden *:!w-fit p-6" />
 
           {/*  */}
           {/*  */}
@@ -138,17 +135,22 @@ export const Navbar = () => {
         </div>
       </nav>
       <div className="md:hidden ">
-        <Sidebar side="right" className="!fixed">
+        <Sidebar side="right" className="!fixed ">
           <SidebarContent>
             <SidebarGroup>
               <SidebarGroupLabel>Application</SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
-                  {items.map((item) => (
-                    <SidebarMenuItem key={item.title}>
+                  {/*  */}
+                  {/*  */}
+                  {/* Agregar acordion para la opcion de "Institucional y que despliegue las opciones que ofrece el CENS" */}
+                  {/*  */}
+                  {/*  */}
+                  {MenuMobile.map((item) => (
+                    <SidebarMenuItem key={item.titulo}>
                       <SidebarMenuButton asChild>
-                        <a href={item.url}>
-                          <span>{item.title}</span>
+                        <a href={item.link}>
+                          <span>{item.titulo}</span>
                         </a>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
