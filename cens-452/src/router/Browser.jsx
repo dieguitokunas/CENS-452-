@@ -5,11 +5,10 @@ import { Navbar } from "../components/Navbar";
 export const Browser = () => {
   return (
     <Router>
-      <Navbar>
+      <Navbar/>
         <Routes>
           <Route path="/" element={<Inicio />} />
         </Routes>
-      </Navbar>
     </Router>
   );
 };

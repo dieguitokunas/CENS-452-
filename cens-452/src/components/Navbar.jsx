@@ -18,6 +18,7 @@ import {
   SidebarMenuItem,
   SidebarTrigger,
 } from "./ui/sidebar";
+import { Separator } from "@radix-ui/react-separator";
 
 
 const Sublinks = [
@@ -61,7 +62,7 @@ export const Navbar = () => {
         <div className="flex w-full h-20 md:px-20 rounded-sm  justify-between items-center">
           <span className="flex gap-6 items-center h-full ">
             <img src="/logo.png" className="size-20 min-w-20 rounded-sm" />
-            <div className="max-xl:hidden grid grid-cols-[1fr_auto] hover:bg-accent/10 cursor-pointer w-fit items-center h-32 px-8">
+            <div className="max-md:hidden grid grid-cols-[1fr_auto] hover:bg-accent/10 cursor-pointer w-fit items-center h-32 px-8">
               <div className="flex flex-col justify-center text-nowrap gap-1 text-left">
                 <h1 className="text-lg font-serif font-bold text-gray-900">
                   Centro Educativo
@@ -113,7 +114,7 @@ export const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <a
                             href={elm.link}
-                            className={`hover:!bg-[#588427] font-medium `}
+                            className={`hover:!bg-[#588427] `}
                           >
                             {elm.texto}
                           </a>
@@ -134,6 +135,7 @@ export const Navbar = () => {
           {/*  */}
         </div>
       </nav>
+      <Separator className="bg-gray-200 h-0.5"/>
       <div className="md:hidden ">
         <Sidebar side="right" className="!fixed ">
           <SidebarContent>
